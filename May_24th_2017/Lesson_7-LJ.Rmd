@@ -2,7 +2,7 @@
 title: "Lesson-7"
 author: "Leonardo Jo"
 date: "May 24, 2017"
-output: html_document
+output: md_document
 ---
 
 ```{r error=TRUE} 
