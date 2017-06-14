@@ -7,6 +7,10 @@ output:
     keep_md: yes
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 ```{r error = T} 
 ## 12 Tidy Data
 ### 12.1 Introduction

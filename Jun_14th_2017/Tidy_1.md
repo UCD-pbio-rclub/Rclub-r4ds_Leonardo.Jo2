@@ -3,6 +3,8 @@ Leonardo Jo
 June 14, 2017  
 
 
+
+
 ```r
 ## 12 Tidy Data
 ### 12.1 Introduction
