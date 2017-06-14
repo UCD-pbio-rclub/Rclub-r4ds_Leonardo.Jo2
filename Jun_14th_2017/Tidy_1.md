@@ -10,40 +10,12 @@ library(tidyverse)
 ```
 
 ```
-## Warning: package 'tidyverse' was built under R version 3.3.3
-```
-
-```
 ## Loading tidyverse: ggplot2
 ## Loading tidyverse: tibble
 ## Loading tidyverse: tidyr
 ## Loading tidyverse: readr
 ## Loading tidyverse: purrr
 ## Loading tidyverse: dplyr
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.3.3
-```
-
-```
-## Warning: package 'tibble' was built under R version 3.3.3
-```
-
-```
-## Warning: package 'tidyr' was built under R version 3.3.3
-```
-
-```
-## Warning: package 'readr' was built under R version 3.3.3
-```
-
-```
-## Warning: package 'purrr' was built under R version 3.3.3
-```
-
-```
-## Warning: package 'dplyr' was built under R version 3.3.3
 ```
 
 ```
@@ -61,7 +33,7 @@ table1
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ##         <chr> <int>  <int>      <int>
 ## 1 Afghanistan  1999    745   19987071
@@ -77,18 +49,18 @@ table2
 ```
 
 ```
-## # A tibble: 12 x 4
+## # A tibble: 12 × 4
 ##        country  year       type      count
 ##          <chr> <int>      <chr>      <int>
-##  1 Afghanistan  1999      cases        745
-##  2 Afghanistan  1999 population   19987071
-##  3 Afghanistan  2000      cases       2666
-##  4 Afghanistan  2000 population   20595360
-##  5      Brazil  1999      cases      37737
-##  6      Brazil  1999 population  172006362
-##  7      Brazil  2000      cases      80488
-##  8      Brazil  2000 population  174504898
-##  9       China  1999      cases     212258
+## 1  Afghanistan  1999      cases        745
+## 2  Afghanistan  1999 population   19987071
+## 3  Afghanistan  2000      cases       2666
+## 4  Afghanistan  2000 population   20595360
+## 5       Brazil  1999      cases      37737
+## 6       Brazil  1999 population  172006362
+## 7       Brazil  2000      cases      80488
+## 8       Brazil  2000 population  174504898
+## 9        China  1999      cases     212258
 ## 10       China  1999 population 1272915272
 ## 11       China  2000      cases     213766
 ## 12       China  2000 population 1280428583
@@ -99,7 +71,7 @@ table3
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year              rate
 ## *       <chr> <int>             <chr>
 ## 1 Afghanistan  1999      745/19987071
@@ -115,7 +87,7 @@ table4a
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##       country `1999` `2000`
 ## *       <chr>  <int>  <int>
 ## 1 Afghanistan    745   2666
@@ -128,7 +100,7 @@ table4b
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##       country     `1999`     `2000`
 ## *       <chr>      <int>      <int>
 ## 1 Afghanistan   19987071   20595360
@@ -143,7 +115,7 @@ table1 %>%
 ```
 
 ```
-## # A tibble: 6 x 5
+## # A tibble: 6 × 5
 ##       country  year  cases population     rate
 ##         <chr> <int>  <int>      <int>    <dbl>
 ## 1 Afghanistan  1999    745   19987071 0.372741
@@ -160,7 +132,7 @@ table1 %>%
 ```
 
 ```
-## # A tibble: 2 x 2
+## # A tibble: 2 × 2
 ##    year      n
 ##   <int>  <int>
 ## 1  1999 250740
@@ -173,7 +145,7 @@ table1 %>%
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##       country      n
 ##         <chr>  <int>
 ## 1 Afghanistan   3411
@@ -200,7 +172,7 @@ table1
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ##         <chr> <int>  <int>      <int>
 ## 1 Afghanistan  1999    745   19987071
@@ -216,18 +188,18 @@ table2
 ```
 
 ```
-## # A tibble: 12 x 4
+## # A tibble: 12 × 4
 ##        country  year       type      count
 ##          <chr> <int>      <chr>      <int>
-##  1 Afghanistan  1999      cases        745
-##  2 Afghanistan  1999 population   19987071
-##  3 Afghanistan  2000      cases       2666
-##  4 Afghanistan  2000 population   20595360
-##  5      Brazil  1999      cases      37737
-##  6      Brazil  1999 population  172006362
-##  7      Brazil  2000      cases      80488
-##  8      Brazil  2000 population  174504898
-##  9       China  1999      cases     212258
+## 1  Afghanistan  1999      cases        745
+## 2  Afghanistan  1999 population   19987071
+## 3  Afghanistan  2000      cases       2666
+## 4  Afghanistan  2000 population   20595360
+## 5       Brazil  1999      cases      37737
+## 6       Brazil  1999 population  172006362
+## 7       Brazil  2000      cases      80488
+## 8       Brazil  2000 population  174504898
+## 9        China  1999      cases     212258
 ## 10       China  1999 population 1272915272
 ## 11       China  2000      cases     213766
 ## 12       China  2000 population 1280428583
@@ -238,7 +210,7 @@ table3
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year              rate
 ## *       <chr> <int>             <chr>
 ## 1 Afghanistan  1999      745/19987071
@@ -254,7 +226,7 @@ table4a
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##       country `1999` `2000`
 ## *       <chr>  <int>  <int>
 ## 1 Afghanistan    745   2666
@@ -267,7 +239,7 @@ table4b
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##       country     `1999`     `2000`
 ## *       <chr>      <int>      <int>
 ## 1 Afghanistan   19987071   20595360
@@ -280,7 +252,7 @@ table5
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country century  year              rate
 ## *       <chr>   <chr> <chr>             <chr>
 ## 1 Afghanistan      19    99      745/19987071
@@ -316,7 +288,7 @@ table2 %>%
 ```
 
 ```
-## # A tibble: 6 x 5
+## # A tibble: 6 × 5
 ##       country  year  Cases Population     rate
 ##         <chr> <int>  <int>      <int>    <dbl>
 ## 1 Afghanistan  1999    745   19987071 0.372741
@@ -351,7 +323,7 @@ table4a
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##       country `1999` `2000`
 ## *       <chr>  <int>  <int>
 ## 1 Afghanistan    745   2666
@@ -365,7 +337,7 @@ table4a %>%
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year  cases
 ##         <chr> <chr>  <int>
 ## 1 Afghanistan  1999    745
@@ -382,7 +354,7 @@ table4b %>%
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year population
 ##         <chr> <chr>      <int>
 ## 1 Afghanistan  1999   19987071
@@ -406,7 +378,7 @@ left_join(tidy4a, tidy4b)
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ##         <chr> <chr>  <int>      <int>
 ## 1 Afghanistan  1999    745   19987071
@@ -424,18 +396,18 @@ table2
 ```
 
 ```
-## # A tibble: 12 x 4
+## # A tibble: 12 × 4
 ##        country  year       type      count
 ##          <chr> <int>      <chr>      <int>
-##  1 Afghanistan  1999      cases        745
-##  2 Afghanistan  1999 population   19987071
-##  3 Afghanistan  2000      cases       2666
-##  4 Afghanistan  2000 population   20595360
-##  5      Brazil  1999      cases      37737
-##  6      Brazil  1999 population  172006362
-##  7      Brazil  2000      cases      80488
-##  8      Brazil  2000 population  174504898
-##  9       China  1999      cases     212258
+## 1  Afghanistan  1999      cases        745
+## 2  Afghanistan  1999 population   19987071
+## 3  Afghanistan  2000      cases       2666
+## 4  Afghanistan  2000 population   20595360
+## 5       Brazil  1999      cases      37737
+## 6       Brazil  1999 population  172006362
+## 7       Brazil  2000      cases      80488
+## 8       Brazil  2000 population  174504898
+## 9        China  1999      cases     212258
 ## 10       China  1999 population 1272915272
 ## 11       China  2000      cases     213766
 ## 12       China  2000 population 1280428583
@@ -447,7 +419,7 @@ table2 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ## *       <chr> <int>  <int>      <int>
 ## 1 Afghanistan  1999    745   19987071
@@ -463,7 +435,7 @@ spread(table2, key = type, value = count)
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ## *       <chr> <int>  <int>      <int>
 ## 1 Afghanistan  1999    745   19987071
@@ -490,7 +462,7 @@ stocks
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 4 × 3
 ##    year  half return
 ##   <dbl> <dbl>  <dbl>
 ## 1  2015     1   1.88
@@ -505,7 +477,7 @@ stocks %>%
 ```
 
 ```
-## # A tibble: 2 x 3
+## # A tibble: 2 × 3
 ##    half `2015` `2016`
 ## * <dbl>  <dbl>  <dbl>
 ## 1     1   1.88   0.92
@@ -518,7 +490,7 @@ stocks %>%
 ```
 
 ```
-## # A tibble: 2 x 3
+## # A tibble: 2 × 3
 ##    year   `1`   `2`
 ## * <dbl> <dbl> <dbl>
 ## 1  2015  1.88  0.59
@@ -532,7 +504,7 @@ stocks %>%
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 4 × 3
 ##    year  half return
 ##   <dbl> <chr>  <dbl>
 ## 1  2015     1   1.88
@@ -551,7 +523,7 @@ table4a %>%
 ```
 
 ```
-## Error in combine_vars(vars, ind_list): Position must be between 0 and n
+## Error in eval(substitute(expr), envir, enclos): Position must be between 0 and n
 ```
 
 ```r
@@ -561,7 +533,7 @@ table4a
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##       country `1999` `2000`
 ## *       <chr>  <int>  <int>
 ## 1 Afghanistan    745   2666
@@ -575,7 +547,7 @@ table4a %>%
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year  cases
 ##         <chr> <chr>  <int>
 ## 1 Afghanistan  1999    745
@@ -605,7 +577,7 @@ people
 ```
 
 ```
-## # A tibble: 5 x 3
+## # A tibble: 5 × 3
 ##              name    key value
 ##             <chr>  <chr> <dbl>
 ## 1   Phillip Woods    age    45
@@ -639,7 +611,7 @@ people2
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 4 × 3
 ##              name    key value
 ##             <chr>  <chr> <dbl>
 ## 1   Phillip Woods    age    45
@@ -654,7 +626,7 @@ people2 %>%
 ```
 
 ```
-## # A tibble: 2 x 3
+## # A tibble: 2 × 3
 ##              name   age height
 ## *           <chr> <dbl>  <dbl>
 ## 1 Jessica Cordero    37    156
@@ -673,7 +645,7 @@ preg
 ```
 
 ```
-## # A tibble: 2 x 3
+## # A tibble: 2 × 3
 ##   pregnant  male female
 ##      <chr> <dbl>  <dbl>
 ## 1      yes    NA     10
@@ -686,7 +658,7 @@ preg %>%
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 4 × 3
 ##   pregnant gender cases
 ##      <chr>  <chr> <dbl>
 ## 1      yes   male    NA
@@ -703,7 +675,7 @@ table3 ## Rate variable contain two variables
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year              rate
 ## *       <chr> <int>             <chr>
 ## 1 Afghanistan  1999      745/19987071
@@ -720,7 +692,7 @@ table3 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ## *       <chr> <int>  <chr>      <chr>
 ## 1 Afghanistan  1999    745   19987071
@@ -737,7 +709,7 @@ table3 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ## *       <chr> <int>  <chr>      <chr>
 ## 1 Afghanistan  1999    745   19987071
@@ -754,7 +726,7 @@ table3 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ## *       <chr> <int>  <int>      <int>
 ## 1 Afghanistan  1999    745   19987071
@@ -771,7 +743,7 @@ table3 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country century  year              rate
 ## *       <chr>   <chr> <chr>             <chr>
 ## 1 Afghanistan      19    99      745/19987071
@@ -788,7 +760,7 @@ table3 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country century  year              rate
 ## *       <chr>   <chr> <chr>             <chr>
 ## 1 Afghanistan     199     9      745/19987071
@@ -806,7 +778,7 @@ table5
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country century  year              rate
 ## *       <chr>   <chr> <chr>             <chr>
 ## 1 Afghanistan      19    99      745/19987071
@@ -823,7 +795,7 @@ table5 %>%
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country   new              rate
 ## *       <chr> <chr>             <chr>
 ## 1 Afghanistan 19_99      745/19987071
@@ -840,7 +812,7 @@ table5 %>%
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country   new              rate
 ## *       <chr> <chr>             <chr>
 ## 1 Afghanistan  1999      745/19987071
@@ -877,7 +849,7 @@ tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>%
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##     one   two three
 ## * <chr> <chr> <chr>
 ## 1     a     b     c
@@ -891,7 +863,7 @@ tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>%
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##     one   two three
 ## * <chr> <chr> <chr>
 ## 1     a     b     c
@@ -910,7 +882,7 @@ tibble(x = c("a,b,c", "d,e", "f,g,i")) %>%
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##     one   two three
 ## * <chr> <chr> <chr>
 ## 1     a     b     c
@@ -924,7 +896,7 @@ tibble(x = c("a,b,c", "d,e", "f,g,i")) %>%
 ```
 
 ```
-## # A tibble: 3 x 3
+## # A tibble: 3 × 3
 ##     one   two three
 ## * <chr> <chr> <chr>
 ## 1     a     b     c
@@ -940,7 +912,7 @@ tibble(x = c("a,b,c", "d,e,f", "f,g,i")) %>%
 ```
 
 ```
-## # A tibble: 3 x 4
+## # A tibble: 3 × 4
 ##       x   one   two three
 ## * <chr> <chr> <chr> <chr>
 ## 1 a,b,c     a     b     c
@@ -955,7 +927,7 @@ table3
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ##       country  year              rate
 ## *       <chr> <int>             <chr>
 ## 1 Afghanistan  1999      745/19987071
@@ -972,7 +944,7 @@ table3 %>%
 ```
 
 ```
-## # A tibble: 6 x 4
+## # A tibble: 6 × 4
 ##       country  year  cases population
 ## *       <chr> <int>  <chr>      <chr>
 ## 1 Afghanistan  1999    745   19987071
