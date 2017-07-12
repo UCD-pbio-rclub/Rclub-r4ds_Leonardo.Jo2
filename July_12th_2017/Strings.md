@@ -5,7 +5,6 @@ July 12, 2017
 
 
 ```r
-knitr::opts_chunk$set(echo = TRUE)
 # 14 Strings
 
 ## 14.1 Introduction
