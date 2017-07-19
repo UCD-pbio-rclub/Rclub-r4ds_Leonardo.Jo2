@@ -1,18 +1,12 @@
----
-title: "Chapter_14_cont"
-author: "Leonardo Jo"
-date: "July 19, 2017"
-output: 
-  html_document: 
-    keep_md: yes
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Chapter_14_cont
+Leonardo Jo  
+July 19, 2017  
 
 
-```{r, error=T}
+
+
+
+```r
 library(tidyverse)
 library(stringr)
 
@@ -431,6 +425,12 @@ words %>%
   str_replace_all("(^[\\w])", last.letter) %>%
   str_replace_all("([\\w]$)", first.letter)
 
+```
 
+```
+## Error: <text>:267:1: unexpected input
+## 266: 
+## 267: <<
+##      ^
 ```
 
