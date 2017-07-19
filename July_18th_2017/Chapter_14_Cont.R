@@ -244,6 +244,7 @@ e <- df %>% filter(str_detect(words, "[e]+"))
 i <- df %>% filter(str_detect(words, "[i]+"))
 o <- df %>% filter(str_detect(words, "[o]+"))
 u <- df %>% filter(str_detect(words, "[u]+"))
+<<<<<<< HEAD
 merge(a,e, by ="word") %>%
   merge(i, by ="word") %>%
   merge(o, by ="word") %>%
@@ -264,3 +265,7 @@ df2 %>%
 
 
 
+=======
+df %>% filter(word == unlist(a$word))
+## What word has the highest number of vowels? What word has the highest proportion of vowels? (Hint: what is the denominator?)
+>>>>>>> aa69d4e90ab9e276361aa62ed719138f7c7e213d
