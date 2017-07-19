@@ -244,7 +244,7 @@ e <- df %>% filter(str_detect(words, "[e]+"))
 i <- df %>% filter(str_detect(words, "[i]+"))
 o <- df %>% filter(str_detect(words, "[o]+"))
 u <- df %>% filter(str_detect(words, "[u]+"))
-<<<<<<< HEAD
+
 merge(a,e, by ="word") %>%
   merge(i, by ="word") %>%
   merge(o, by ="word") %>%
@@ -264,8 +264,156 @@ df2 %>%
   filter(vowels.proportion == max(vowels.proportion))
 
 
+## 14.4.3 Extract matches
+length(sentences)
+head(sentences)
 
-=======
-df %>% filter(word == unlist(a$word))
-## What word has the highest number of vowels? What word has the highest proportion of vowels? (Hint: what is the denominator?)
->>>>>>> aa69d4e90ab9e276361aa62ed719138f7c7e213d
+## Identifying every sentence that contains a collor
+colours <- c("red", "orange", "yellow", "green", "blue", "purple")
+colour_match <- str_c(colours, collapse = "|")
+colour_match
+has_colour <- str_subset(sentences, colour_match)
+head(has_colour)
+matches <- str_extract(has_colour, colour_match)
+head(matches)
+
+more <- sentences[str_count(sentences, colour_match) > 1]
+str_count(sentences, colour_match)
+str_view_all(more, colour_match)
+str_view(more, colour_match) ## Differences?
+str_extract(more, colour_match)
+str_extract_all(more, colour_match)
+str_extract_all(more, colour_match, simplify = T)
+
+x <- c("a", "a b", "a b c", "d")
+str_extract_all(x, "[a-z]", simplify = TRUE)
+
+## 14.4.3.1 Exercises
+
+## 1. In the previous example, you might have noticed that the regular expression matched “flickered”, which is not a colour. Modify the regex to fix the problem.
+## adding spaces before each color
+colours <- c(" red", " orange", " yellow", " green", " blue", " purple")
+colour_match <- str_c(colours, collapse = "|")
+more <- sentences[str_count(sentences, colour_match) > 1]
+more
+
+##From the Harvard sentences data, extract:
+  
+##The first word from each sentence.
+first.word <- sentences %>%
+  str_extract("^[\\w]+")
+first.word
+##All words ending in ing.
+
+ing <- sentences[str_count(sentences, "[\\w]+ing") >= 1]
+ing %>%
+  str_extract_all("[\\w]+ing", simplify = T)
+
+sentences %>%
+  str_subset("[\\w]+ing") %>%
+  str_extract_all("[\\w]+ing", simplify = T)
+
+##All plurals.
+plural <- sentences[str_count(sentences, "[\\w]+s[ ]|[\\w]+s[\\.]") >= 1]
+plural %>%
+  str_extract_all("[\\w]+s[ ]|[\\w]+s[\\.]", simplify = T)
+
+sentences %>%
+  str_subset("[\\w]+es[ ]|[\\w]+es[\\.]") %>%
+  str_extract_all("[\\w]+es[ ]|[\\w]+es[\\.]", simplify = T)
+
+## 14.4.4 Grouped matches
+noun <- "(a|the) ([^ ]+)" ## what is ([^ ]+) 
+
+has_noun <- sentences %>%
+  str_subset(noun) %>%
+  head(10)
+has_noun
+has_noun %>% 
+  str_extract(noun)
+
+has_noun %>% str_match(noun) 
+
+tibble(sentence = sentences) %>% 
+  tidyr::extract(
+    sentence, c("article", "noun"), "(a|the) ([^ ]+)", 
+    remove = FALSE
+  )
+
+
+## 14.4.4.1 Exercises
+
+## 1. Find all words that come after a “number” like “one”, “two”, “three” etc. Pull out both the number and the word.
+number <- "(one|two|three|four|five|six|seven|eight|nine) ([^ ]+)" ## what is ([^ ]+) 
+
+has_number <- sentences %>%
+  str_subset(number)
+has_number
+has_number %>% 
+  str_extract(number)
+
+has_number %>% str_match(number) 
+
+## 2. Find all contractions. Separate out the pieces before and after the apostrophe.
+contractions <- "([^ ]+)(\\')([^ ]+)"
+has_contractions <- sentences %>%
+  str_subset(contractions)
+has_contractions
+has_contractions %>% str_match(contractions) 
+
+## 14.4.5 Replacing matches
+x <- c("apple", "pear", "banana")
+str_replace(x, "[aeiou]", "-") ## Only changes one letter
+str_replace_all(x, "[aeiou]", "-") ## Changes all the letters
+
+
+x <- c("1 house", "2 cars", "3 people")
+str_replace_all(x, c("1" = "one", "2" = "two", "3" = "three"))
+
+
+sentences %>% 
+  str_replace("([^ ]+) ([^ ]+) ([^ ]+)", "\\1 \\3 \\2") %>% 
+  head(5)
+
+
+## 14.4.5.1 Exercises
+
+## Replace all forward slashes in a string with backslashes.
+a <- c("a/b","a/b/c", "a/b/c/d")
+a %>% 
+  str_replace_all("/","\\\\") %>%
+  writeLines()
+
+## Implement a simple version of str_to_lower() using replace_all().
+
+first.letter <- sentences %>%
+  str_extract("^[\\w]")
+lower.letter <- tolower(first.letter)
+sentences %>% 
+  str_replace_all("^[\\w]", lower.letter) %>% 
+  head(5)
+
+## Switch the first and last letters in words. Which of those strings are still words?
+
+words %>% 
+  str_replace_all("^[\\w]", "[\\w]$") %>% 
+  head(5) ## Don't Work!
+
+words %>% 
+  str_replace_all("(^[\\w]) ([\\w]$) ", "\\2 \\1") %>% 
+  head(5) ## Don't Work!
+
+last.letter <- words %>% 
+  str_extract("[\\w]$")
+last.letter
+
+first.letter <- words %>%
+  str_extract("^[\\w]")
+first.letter
+
+words %>% 
+  str_replace_all("(^[\\w])", last.letter) %>%
+  str_replace_all("([\\w]$)", first.letter)
+
+
+
