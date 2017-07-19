@@ -124,10 +124,15 @@ df[, "xyz"]
 #tibble don't treat columns like factors
 
 var <- "mpg"
-df <- tibble('abc' = c(1,2), 'xyz' = c("mpg","xxx"))
+df <- tibble(`abc` = c(1,2), `xyz` = c("mpg","xxx"))
 df
+
 df %>% as_tibble() %>%
-  filter(xyz, xyz == var)
+  filter(`xyz`, `xyz` == var)
+
+get(df, var)
+
+mpg[var]
 
 subset(df, xyz == var)
 
@@ -141,6 +146,8 @@ annoying <- tibble(
 
 annoying %>% filter(`1`, `1` == 1)
 
+annoying[["`1"]]
+
 ## Plotting a scatterplot of 1 vs 2.
 
 ggplot(annoying) +
@@ -151,12 +158,15 @@ ggplot(annoying) +
 annoying <- annoying %>% 
   mutate(`3`= `2`/`1`)
 
+annoying
 ## Renaming the columns to one, two and three.
 
 annoying %>%
-  rename(`1` = `one`,`2`= `two`,`3`= `three`)
+  rename("one" = `1`)
 
 names(annoying) <- c("one", "two", "three")
+
+write.table(annoying, "annoying.txt", sep="\t", col.names = T, row.names = F)
 
 annoying
 
