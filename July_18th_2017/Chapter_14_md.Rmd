@@ -7,11 +7,6 @@ output:
     keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
 ```{r, error=T}
 library(tidyverse)
 library(stringr)
@@ -279,7 +274,6 @@ df2 %>%
   filter(vowels.proportion == max(vowels.proportion))
 
 
-<<<<<<< HEAD
 ## 14.4.3 Extract matches
 length(sentences)
 head(sentences)

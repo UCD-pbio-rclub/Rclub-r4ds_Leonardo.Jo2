@@ -401,7 +401,7 @@ words %>%
   head(5) ## Don't Work!
 
 words %>% 
-  str_replace_all("(^[\\w]) ([\\w]$) ", "\\2 \\1") %>% 
+  str_replace("(^[\\w]) ([\\w]$) ", "\\1 \\1") %>% 
   head(5) ## Don't Work!
 
 last.letter <- words %>% 
