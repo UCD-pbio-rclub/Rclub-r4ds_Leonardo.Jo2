@@ -10,6 +10,9 @@ output:
 ```{r, error = TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 
+library(tidyverse)
+library(stringr)
+
 ## 14.3 Matching patterns with regular expressions
 
 x <- c("apple", "banana", "pear")
