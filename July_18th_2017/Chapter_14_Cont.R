@@ -174,5 +174,93 @@ str_view(a, "^(.).+(.)\\1$", match = T)
 ## Contain a repeated pair of letters (e.g. “church” contains “ch” repeated twice.)
 str_view(a, "(..)", match = T)
 
-
 ## 14.4 Tools
+
+x <- c("apple", "banana", "pear")
+str_detect(x, "e")
+#> [1]  TRUE FALSE  TRUE
+
+# How many common words start with t?
+##LOGIC ARGUMENTS in a numeric context, FALSE = 0 and TRUE = 0
+sum(str_detect(words, "^t"))
+
+# What proportion of common words end with a vowel?
+mean(str_detect(words, "[aeiou]$"))
+#> [1] 0.277
+
+# Find all words containing at least one vowel, and negate
+no_vowels_1 <- !str_detect(words, "[aeiou]")
+# Find all words consisting only of consonants (non-vowels)
+no_vowels_2 <- str_detect(words, "^[^aeiou]+$")
+identical(no_vowels_1, no_vowels_2)
+
+words[str_detect(words, "x$")]
+#> [1] "box" "sex" "six" "tax"
+str_subset(words, "x$")
+#> [1] "box" "sex" "six" "tax"
+
+df <- tibble(
+  word = words, 
+  i = seq_along(word)
+)
+
+
+df %>% 
+  filter(str_detect(words, "x$")) ##filter find rows having specific values or string patterns
+
+x <- c("apple", "banana", "pear")
+str_count(x, "a")
+#> [1] 1 3 1
+
+# On average, how many vowels per word?
+mean(str_count(words, "[aeiou]"))
+#> [1] 1.99
+
+df %>% 
+  mutate(
+    vowels = str_count(word, "[aeiou]"),
+    consonants = str_count(word, "[^aeiou]")
+  )
+
+str_count("abababa", "aba")
+#> [1] 2
+str_view_all("abababa", "aba")
+
+## 14.4.2 Exercises
+
+## 1. For each of the following challenges, try solving it by using both a single regular expression, and a combination of multiple str_detect() calls.
+
+## Find all words that start or end with x.
+df %>% filter(str_detect(words, "x$")) # Four Words
+df %>% filter(str_detect(words, "^x")) # Zero Words
+df %>% filter(str_detect(words, "^(x)|(x)$")) 
+
+## Find all words that start with a vowel and end with a consonant.
+df %>% filter(str_detect(words, "^[aeiou].*[^aeiou]$"))
+
+## Are there any words that contain at least one of each different vowel?
+a <- df %>% filter(str_detect(words, "[a]+"))
+e <- df %>% filter(str_detect(words, "[e]+"))
+i <- df %>% filter(str_detect(words, "[i]+"))
+o <- df %>% filter(str_detect(words, "[o]+"))
+u <- df %>% filter(str_detect(words, "[u]+"))
+merge(a,e, by ="word") %>%
+  merge(i, by ="word") %>%
+  merge(o, by ="word") %>%
+  merge(u, by ="word")
+
+## What word has the highest number of vowels? What word has the highest proportion of vowels? (Hint: what is the denominator?)
+df2 <- df %>% 
+  mutate(
+    vowels = str_count(word, "[aeiou]"),
+    letters = str_count(word, "[\\w]"),
+    vowels.proportion = vowels/letters)
+
+df2 %>%
+  filter(vowels == max(vowels))
+
+df2 %>%
+  filter(vowels.proportion == max(vowels.proportion))
+
+
+
