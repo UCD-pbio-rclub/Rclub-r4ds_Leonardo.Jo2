@@ -264,6 +264,7 @@ df2 %>%
   filter(vowels.proportion == max(vowels.proportion))
 
 
+<<<<<<< HEAD
 ## 14.4.3 Extract matches
 length(sentences)
 head(sentences)
@@ -417,3 +418,5 @@ words %>%
 
 
 
+=======
+>>>>>>> 51340aac7bd7f1369c1b7c4d2ffa2be10b89941d
