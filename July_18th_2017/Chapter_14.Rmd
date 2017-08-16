@@ -1,6 +1,17 @@
+---
+title: "Chapter_14"
+author: "Leonardo Jo"
+date: "July 19, 2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r, error = TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+
 library(tidyverse)
 library(stringr)
-
 
 ## 14.3 Matching patterns with regular expressions
 
@@ -264,7 +275,6 @@ df2 %>%
   filter(vowels.proportion == max(vowels.proportion))
 
 
-<<<<<<< HEAD
 ## 14.4.3 Extract matches
 length(sentences)
 head(sentences)
@@ -401,7 +411,7 @@ words %>%
   head(5) ## Don't Work!
 
 words %>% 
-  str_replace("(^[\\w]) ([\\w]$) ", "\\1 \\1") %>% 
+  str_replace_all("(^[\\w]) ([\\w]$) ", "\\2 \\1") %>% 
   head(5) ## Don't Work!
 
 last.letter <- words %>% 
@@ -416,7 +426,5 @@ words %>%
   str_replace_all("(^[\\w])", last.letter) %>%
   str_replace_all("([\\w]$)", first.letter)
 
+```
 
-
-=======
->>>>>>> 51340aac7bd7f1369c1b7c4d2ffa2be10b89941d
