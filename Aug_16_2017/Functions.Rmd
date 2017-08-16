@@ -1,3 +1,14 @@
+---
+title: "Functions"
+author: "Leonardo Jo"
+date: "August 16, 2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, error = TRUE}
+knitr::opts_chunk$set(echo = TRUE)
 # 19 Functions
 library(tidyverse)
 ### 19.2
@@ -289,3 +300,6 @@ MASS::mvrnorm(10,5,10)
 ## you need to specify mean, sigma
 
 ## Make a case for why norm_r(), norm_d() etc would be better than rnorm(), dnorm(). Make a case for the opposite.
+
+```
+
