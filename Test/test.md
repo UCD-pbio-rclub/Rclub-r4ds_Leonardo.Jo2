@@ -16,6 +16,7 @@
     ##  3rd Qu.:19.0   3rd Qu.: 56.00  
     ##  Max.   :25.0   Max.   :120.00
 
-    qplot(speed,dist,data=cars)
+    t <- qplot(speed,dist,data=cars)
+    t
 
 ![](test_files/figure-markdown_strict/unnamed-chunk-2-1.png)

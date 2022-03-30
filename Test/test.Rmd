@@ -22,6 +22,7 @@ Testing.git
 ##testing Git
 library(ggplot2)
 summary(cars)
-qplot(speed,dist,data=cars)
+t <- qplot(speed,dist,data=cars)
+t
 
 ```
