@@ -17,3 +17,12 @@ Testing.git
 
 
 ```
+
+``` {r}
+##testing Git
+library(ggplot2)
+summary(cars)
+qplot(speed,dist,data=cars)
+
+
+```
