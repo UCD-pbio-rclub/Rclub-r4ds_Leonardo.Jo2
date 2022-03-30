@@ -1,0 +1,17 @@
+---
+title: "Test.01"
+author: "LJ"
+date: "3/30/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+``` {r}
+##testing Git
+Testing.git <- "Hello WOrld"
+Testing.git
+```
